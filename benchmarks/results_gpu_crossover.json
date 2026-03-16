@@ -1,0 +1,52 @@
+[
+  {
+    "N": 8,
+    "restarts": 32,
+    "max_iters": 500,
+    "cpu_median_ms": 104.68673706054688,
+    "cpu_feas": "3/3",
+    "mps_median_ms": 619.6820735931396,
+    "mps_feas": "3/3",
+    "mps_speedup": 0.17
+  },
+  {
+    "N": 16,
+    "restarts": 32,
+    "max_iters": 500,
+    "cpu_median_ms": 864.5102977752686,
+    "cpu_feas": "3/3",
+    "mps_median_ms": 805.5028915405273,
+    "mps_feas": "3/3",
+    "mps_speedup": 1.07
+  },
+  {
+    "N": 32,
+    "restarts": 64,
+    "max_iters": 500,
+    "cpu_median_ms": 5425.865888595581,
+    "cpu_feas": "3/3",
+    "mps_median_ms": 1503.4711360931396,
+    "mps_feas": "2/3",
+    "mps_speedup": 3.61
+  },
+  {
+    "N": 64,
+    "restarts": 128,
+    "max_iters": 960,
+    "cpu_median_ms": 24088.029146194458,
+    "cpu_feas": "0/3",
+    "mps_median_ms": 4861.436128616333,
+    "mps_feas": "2/3",
+    "mps_speedup": 4.95
+  },
+  {
+    "N": 128,
+    "restarts": 128,
+    "max_iters": 1920,
+    "cpu_median_ms": 88670.50385475159,
+    "cpu_feas": "0/3",
+    "mps_median_ms": 46939.95380401611,
+    "mps_feas": "0/3",
+    "mps_speedup": 1.89
+  }
+]
