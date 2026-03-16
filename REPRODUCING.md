@@ -138,4 +138,12 @@ The dual variables μ are the key innovation. They learn which constraints need 
 | 64 | **FAIL** (6v) | **PASS** | 2.5s | M4 Max |
 | 128 | **FAIL** (8v) | **PASS** | 28s | M4 Max |
 | 256 | **FAIL** | **PASS** | 176s | M4 Max |
-| 512 | — | Testing | — | M3 Ultra |
+| 512 | — | **4 violations** | 72min | M3 Ultra (256GB) |
+
+### N=512 Status
+
+ALM reduced 512-Queens to only 4 diagonal conflicts (out of 130,816 possible pairs — 99.997% clean) but did not fully solve it in 20 outer iterations. The dual variables were still learning. Next steps to crack it:
+- Increase `outer_iters` to 40+ (dual variables need more rounds at this scale)
+- Increase `rho_max` to 500+ (push harder on remaining violations)
+- Try `restarts=128` for better initialization coverage
+- Combine ALM with iterative rounding (fix easy variables first, ALM on the rest)
