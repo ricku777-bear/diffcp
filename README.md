@@ -24,6 +24,7 @@ Standard differentiable CP solvers fail when rounding continuous solutions back 
 | 64 | **FAIL** (6 violations) | **PASS** — 0 violations, 2.5s | PASS, 91ms |
 | 128 | **FAIL** (8 violations) | **PASS** — 0 violations, 28s | PASS, 463ms |
 | 256 | **FAIL** | **PASS** — 0 violations, 176s | PASS |
+| 512 | **FAIL** | **PASS** — 0 violations, 34min (ALM+repair) | PASS |
 
 The ALM solver consistently converges in 2-3 outer iterations. The dual variables learn which diagonal constraints need stronger enforcement, dynamically tightening the relaxation until Hungarian rounding produces a feasible solution.
 
