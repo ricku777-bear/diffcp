@@ -15,6 +15,18 @@ The mathematical foundation: the **Birkhoff-von Neumann theorem** guarantees tha
 
 ## Results
 
+### Closing the Rounding Gap (the breakthrough)
+
+Standard differentiable CP solvers fail when rounding continuous solutions back to integers — the "rounding gap." Our **Augmented Lagrangian (ALM)** solver closes it using learnable dual variables:
+
+| N | Standard (Sinkhorn+Hungarian) | ALM Solver | CP-SAT (baseline) |
+|---|-------------------------------|-----------|-------------------|
+| 64 | **FAIL** (6 violations) | **PASS** — 0 violations, 2.5s | PASS, 91ms |
+| 128 | **FAIL** (8 violations) | **PASS** — 0 violations, 28s | PASS, 463ms |
+| 256 | **FAIL** | **PASS** — 0 violations, 176s | PASS |
+
+The ALM solver consistently converges in 2-3 outer iterations. The dual variables learn which diagonal constraints need stronger enforcement, dynamically tightening the relaxation until Hungarian rounding produces a feasible solution.
+
 ### GPU vs CPU Crossover (Apple M4 Max, MPS backend)
 
 | N | CPU (ms) | GPU/MPS (ms) | Speedup | GPU Feasible |
